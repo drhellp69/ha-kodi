@@ -106,3 +106,5 @@ hakvenv/
 
 config.yaml
 kodi.png
+state.json
+pretty.json
