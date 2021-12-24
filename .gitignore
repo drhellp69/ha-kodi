@@ -103,3 +103,6 @@ hakvenv/
 
 # mypy
 .mypy_cache/
+
+config.yaml
+kodi.png
