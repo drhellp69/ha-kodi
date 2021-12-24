@@ -21,10 +21,11 @@ data = json.loads(response.content)
 for item in data:
     if item["entity_id"] == config['group']:
         entity_ids = item["attributes"]['entity_id']
-        print(entity_ids)
+        #print(entity_ids)
         # Поиск датчиков
         for entity_id in entity_ids:
             for entity in data:
                 if entity["entity_id"] == entity_id:
-                    print(entity["state"])
+                    print(entity["attributes"]['friendly_name'] + ' ' + entity["state"])
+                    #print(entity["state"] + entity["attributes"]['unit_of_measurement'])
                     print(entity["attributes"])
