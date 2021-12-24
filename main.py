@@ -16,4 +16,15 @@ response = requests.request("GET", url, headers=headers)
 data = json.loads(response.content)   
 
 # Получаем entity_id из группы
-print(data)#['attributes']['entity_id'])
+#print(response.text)
+#print(data['entity_id']['person.vilensia'])
+for item in data:
+    if item["entity_id"] == config['group']:
+        entity_ids = item["attributes"]['entity_id']
+        print(entity_ids)
+        # Поиск датчиков
+        for entity_id in entity_ids:
+            for entity in data:
+                if entity["entity_id"] == entity_id:
+                    print(entity["state"])
+                    print(entity["attributes"])
